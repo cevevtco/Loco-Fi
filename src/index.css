@@ -4,7 +4,7 @@
 
 /* Active Navigation Link */
 .active {
-  @apply text-white;
+  /* @apply text-white; */
 }
 
 .active svg {

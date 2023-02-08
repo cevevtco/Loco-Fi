@@ -16,6 +16,12 @@ import {
 
 import {
   Home,
+  Contactus,
+  PrivacyPolicy,
+  Login,
+  Signup,
+  AboutUs,
+  ForgetPassword,
   ArtistDetails,
   TopArtists,
   AroundYou,
@@ -38,7 +44,7 @@ const App = () => {
   // 當 72 行的 div scroll 的時候, 判斷 isScrollToTopActive 要設為 true/false
   const onScroll = (e) => {
     setScrollToTopActive(e.target.scrollTop > 300);
-    console.log(e.target.scrollTop);
+    // console.log(e.target.scrollTop);
   };
 
   // 當 ScrollToTop button 點選時, 被 useRef 勾住的 "div" scoll 到 top: 0
@@ -94,11 +100,17 @@ const App = () => {
                 <Route path="/artists/:id" element={<ArtistDetails />} />
                 <Route path="/songs/:songid" element={<SongDetails />} />
                 <Route path="/search/:searchTerm" element={<Search />} />
+                <Route path="/Contactus" element={<Contactus />} />
+                <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+                <Route path="/Login" element={<Login />} />
+                <Route path="/Signup" element={<Signup />} />
+                <Route path="/AboutUs" element={<AboutUs />} />
+                <Route path="/ForgetPassword" element={<ForgetPassword />} />
               </Routes>
               <Footer />
             </div>
             <div className="xl:sticky relative top-0 h-fit">
-              <TopPlay />
+              {/* <TopPlay /> */}
             </div>
           </div>
         </div>
@@ -112,7 +124,7 @@ const App = () => {
       <div className="fixed bottom-2 right-2 animate-bounce">
         {/* 增加 onClick={scrollToTop} 點選時會觸發上方的 scrollToTop function*/}
         <button
-          type="button"
+          // type="button"
           onClick={scrollToTop}
           // 當 isScrollToTopActive = true 不透明度設為 75, isScrollToTopActive = false 不透明度設為 0
           className={`" inline-flex items-center p-3 rounded-full shadow-sm text-white bg-gray-500 transition-opacity hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"

@@ -2,10 +2,15 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
+    plugins: [
+      require("tailwind-scrollbar-hide"),
+      // ...
+    ],
     extend: {
       colors: {
         black: "#191624",
       },
+
       animation: {
         slideup: "slideup 1s ease-in-out",
         slidedown: "slidedown 1s ease-in-out",

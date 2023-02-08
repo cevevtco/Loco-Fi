@@ -31,19 +31,28 @@ const Footer = () => {
         <div className="sm:flex sm:items-center sm:justify-between">
           <ul className="flex flex-wrap items-center mb-6 mr-3 text-sm font-bold text-white sm:mb-0 dark:text-gray-400">
             <li>
-              <a href="#" className="mr-4 hover:text-gray-400 md:mr-6 ">
+              <NavLink
+                to="/AboutUs"
+                className="mr-4 hover:text-gray-400 md:mr-6 "
+              >
                 About Loco-Fi
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="#" className="mr-4 hover:text-gray-400 md:mr-6">
+              <NavLink
+                to="/PrivacyPolicy"
+                className="mr-4 hover:text-gray-400 md:mr-6"
+              >
                 Privacy Policy
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="#" className="mr-4 hover:text-gray-400 md:mr-6 ">
+              <NavLink
+                to="/Contactus"
+                className="mr-4 hover:text-gray-400 md:mr-6 "
+              >
                 Contact us
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -52,9 +61,9 @@ const Footer = () => {
       <div className="sm:flex sm:items-center sm:justify-between">
         <span className="text-sm text-white sm:text-center dark:text-gray-400">
           © 2023{" "}
-          <a href="#" className="hover:underline">
+          <NavLink to="/" className="hover:underline">
             Loco-Fi™.
-          </a>
+          </NavLink>
         </span>
         <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
           <a

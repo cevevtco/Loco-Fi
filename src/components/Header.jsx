@@ -13,7 +13,7 @@ const Header = (props) => {
   };
 
   return (
-    <header className="relative">
+    <header className="relative w-full">
       <nav className=" relative bg-black   border-gray-200 px-4 lg:px-6 py-2.5  dark:bg-gray-800">
         <div className="flex flex-wrap justify-between items-center ml-3 mt-5 max-w-screen-xl">
           <div className="flex flex-row">
@@ -40,8 +40,8 @@ const Header = (props) => {
             </NavLink>
           </div>
           <div className=" absolute right-7 mt-1 flex items-center lg:order-1  ">
-            <a
-              href="#"
+            <NavLink
+              to="/Login"
               className="flex items-center  text-black hover:bg-gray-200 active:bg-gray-300 font-medium rounded-full
               text-sm px-2 lg:px-5 py-2 lg:py-2.5  bg-[#F5F5F5] focus:outline-none dark:focus:ring-gray-800 "
             >
@@ -53,7 +53,7 @@ const Header = (props) => {
                 />
                 <strong className="hidden  lg:inline">Log in</strong>
               </span>
-            </a>
+            </NavLink>
             {/* button */}
 
             {/* <div className="flex items-center lg:order-2">
@@ -106,30 +106,30 @@ const Header = (props) => {
           >
             <ul className="absolute right-40 flex  flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
               <li>
-                <a
-                  href="#"
+                <NavLink
+                  to="/Discover"
                   className="block py-2 pr-4 pl-3 text-white hover:text-gray-400 rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
                   aria-current="page"
                 >
                   Explore
-                </a>
+                </NavLink>
               </li>
 
               <li>
-                <a
-                  href="#"
-                  className="block py-2 pr-4 pl-3 text-white border-b hover:text-gray-400 border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-white lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                <NavLink
+                  to="/Contactus"
+                  className=" block py-2 pr-4 pl-3 text-white border-b hover:text-gray-400 border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-white lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Contact
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="#"
+                <NavLink
+                  to="/Signup"
                   className="block py-2 pr-4 pl-3 text-white border-b hover:text-gray-400 border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-white lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Sign up
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -139,27 +139,41 @@ const Header = (props) => {
       {/* DropDown menu */}
 
       <div
-        className={`   absolute top-[4.6rem] h-screen w-screen
+        className={`absolute top-[4.6rem] h-screen w-screen
         bg-gradient-to-b from-white/10 to-from-slate-800
         backdrop-blur-lg z-10   smooth-transition  lg:hidden center   border-gray-200 px-4 lg:px-6 py-2.5  dark:bg-gray-800 
         ${isDropdownActive ? "opacity-100 z-50" : "opacity-0 -z-50"}`}
       >
         <ul className="text-center   leading-[5rem] font-bold text-2xl text-white ">
           <li className="">
-            <a className="hover:text-gray-400" href="#">
+            <NavLink
+              to="/discover"
+              onClick={onClick}
+              className="hover:text-gray-400 transition-all duration-300
+             "
+              href="#"
+            >
               Explore
-            </a>
+            </NavLink>
           </li>
 
           <li>
-            <a className="hover:text-gray-400" href="#">
+            <NavLink
+              to="/Contactus"
+              onClick={onClick}
+              className="hover:text-gray-400 transition-all duration-300"
+            >
               Contact
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a className="hover:text-gray-400" href="#">
+            <NavLink
+              to="/Signup"
+              onClick={onClick}
+              className="hover:text-gray-400 transition-all duration-300"
+            >
               Sign up
-            </a>
+            </NavLink>
           </li>
         </ul>
       </div>
