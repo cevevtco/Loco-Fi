@@ -14,7 +14,7 @@ const Header = (props) => {
 
   return (
     <header className="relative w-full">
-      <nav className=" relative bg-black   border-gray-200 px-4 lg:px-6 py-2.5  dark:bg-gray-800">
+      <nav className=" relative bg-black items-center  border-gray-200 px-4 lg:px-6 py-2.5  dark:bg-gray-800">
         <div className="flex flex-wrap justify-between items-center ml-3 mt-5 max-w-screen-xl">
           <div className="flex flex-row">
             <div className=" md:hidden mr-3 mt-1 block ">
@@ -38,7 +38,32 @@ const Header = (props) => {
                 alt="Loco-Fi Logo"
               />
             </NavLink>
+            <label className="relative   ml-28 hidden sm:block sm:w-60 md:w-96 lg:w-80 xl:w-[35rem]">
+              <span className="sr-only">Search</span>
+
+              <input
+                className="text-white placeholder:italic placeholder:text-[#777777] block bg-[#333232] w-full  rounded-full py-2 pl-3 pr-3 shadow-sm focus:outline-none focus:border-slate-300 focus:ring-slate-300 focus:ring-1 sm:text-sm"
+                placeholder="Search for songs,artists,bands..."
+                type="text"
+                name="search"
+              />
+            </label>
+            <span className="cursor-pointer absolute mt-[0.56rem] ml-[15rem] sm:ml-[30.8rem] md:ml-[37rem] lg:ml-[32.7rem] xl:ml-[47.5rem]  ">
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.6132 15.5158C18.7994 13.901 19.5 11.9073 19.5 9.75C19.5 4.36522 15.1348 0 9.75 0C4.36522 0 0 4.36522 0 9.75C0 15.1348 4.36522 19.5 9.75 19.5C11.9079 19.5 13.902 18.799 15.5171 17.6123L15.5158 17.6132C15.5601 17.6732 15.6093 17.7307 15.6636 17.785L21.4393 23.5607C22.0251 24.1465 22.9749 24.1465 23.5607 23.5607C24.1465 22.9749 24.1465 22.0251 23.5607 21.4393L17.785 15.6636C17.7307 15.6093 17.6732 15.5601 17.6132 15.5158ZM18 9.75C18 14.3063 14.3063 18 9.75 18C5.19365 18 1.5 14.3063 1.5 9.75C1.5 5.19365 5.19365 1.5 9.75 1.5C14.3063 1.5 18 5.19365 18 9.75Z"
+                  fill="white"
+                />
+              </svg>
+            </span>
           </div>
+
           <div className=" absolute right-7 mt-1 flex items-center lg:order-1  ">
             <NavLink
               to="/Login"
@@ -100,6 +125,7 @@ const Header = (props) => {
               ></path>
             </svg>
           </button>
+
           <div
             className="relaitve hidden justify-between items-center mt-1 w-full lg:flex lg:w-auto lg:order-1"
             id="mobile-menu-2"
@@ -139,7 +165,7 @@ const Header = (props) => {
       {/* DropDown menu */}
 
       <div
-        className={`absolute top-[4.6rem] h-screen w-screen
+        className={`absolute top-[4.5rem] h-screen w-screen
         bg-gradient-to-b from-white/10 to-from-slate-800
         backdrop-blur-lg z-10   smooth-transition  lg:hidden center   border-gray-200 px-4 lg:px-6 py-2.5  dark:bg-gray-800 
         ${isDropdownActive ? "opacity-100 z-50" : "opacity-0 -z-50"}`}

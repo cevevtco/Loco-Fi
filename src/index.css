@@ -7,7 +7,7 @@
   /* @apply text-white; */
 }
 
-.active svg {
+.active svg:not(.BsMusicNoteList) {
   color: #f97f10;
 }
 

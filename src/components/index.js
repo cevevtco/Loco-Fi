@@ -11,6 +11,7 @@ import Loader from "./Loader";
 import Error from "./Error";
 import Header from "./Header";
 import Footer from "./Footer";
+import PlayPause from "./PlayPause";
 
 export {
   TopPlay,
@@ -26,4 +27,5 @@ export {
   Error,
   Header,
   Footer,
+  PlayPause,
 };

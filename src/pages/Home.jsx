@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import clayBanks from "../assets/img/Home/header/clay-banks.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
@@ -48,22 +48,22 @@ const Home = () => {
             # Music from Across the globe
           </p>
           <p className="text-white font-extrabold  text-xl sm:text-2xl md:text-3xl lg:text-5xl my-1    ">
-            Your favorite music.
+            Discover new music.
           </p>
           <p className="text-white font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-5xl my-1  ">
-            Artists to discover.
+            Explore favorite artists.
           </p>
           <p className="text-white font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-5xl my-1   ">
             And more in Loco-Fi
           </p>
-          <Link to="/Discover">
+          <NavLink to="/Discover">
             <button
-              className=" text-xs w-[10rem] h-[1.5rem] lg:text-xl font-bold  lg:mt-5  lg:w-96 lg:h-14 bg-gradient-to-r from-[#88D3CE] to-[#6E45E2]  
-          hover:from-[#6E45E2] hover:to-[#88D3CE] opacity-80 rounded-full hover:opacity-100 text-white active:bg-violet-700"
+              className=" text-xs w-[10rem] h-[1.5rem] lg:mt-5  lg:w-96 lg:h-14 lg:text-xl font-bold   bg-gradient-to-r from-[rgb(136,211,206,0.8)] to-[rgb(110,69,226,0.8)]  
+          hover:from-[rgb(110,69,226,0.8)] hover:to-[rgb(136,211,206,0.8)]  rounded-full  text-white active:bg-violet-700"
             >
               Discover
             </button>
-          </Link>
+          </NavLink>
         </div>
 
         <div className="relative  flex  items-center mt-12 ">

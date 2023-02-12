@@ -29,6 +29,7 @@ import {
   Search,
   SongDetails,
   TopCharts,
+  YourLibrary,
 } from "./pages";
 
 const App = () => {
@@ -106,6 +107,7 @@ const App = () => {
                 <Route path="/Signup" element={<Signup />} />
                 <Route path="/AboutUs" element={<AboutUs />} />
                 <Route path="/ForgetPassword" element={<ForgetPassword />} />
+                <Route path="/YourLibrary" element={<YourLibrary />} />
               </Routes>
               <Footer />
             </div>
@@ -116,12 +118,12 @@ const App = () => {
         </div>
 
         {activeSong?.title && (
-          <div className="absolute h-28 bottom-0 left-0 right-0 flex animate-slideup bg-gradient-to-br from-white/10 to-[#3f3f3f] backdrop-blur-lg rounded-t-3xl z-10">
+          <div className="absolute h-28 bottom-0 left-0 right-0 flex animate-slideup bg-gradient-to-br from-white/10 to-[#3f3f3f] backdrop-blur-lg rounded-t-3xl z-50">
             <MusicPlayer />
           </div>
         )}
       </div>
-      <div className="fixed bottom-2 right-2 animate-bounce">
+      <div className="fixed bottom-28 right-5 animate-bounce">
         {/* 增加 onClick={scrollToTop} 點選時會觸發上方的 scrollToTop function*/}
         <button
           // type="button"

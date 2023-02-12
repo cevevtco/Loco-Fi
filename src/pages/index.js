@@ -12,6 +12,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 import AboutUs from "./AboutUs";
 import ForgetPassword from "./ForgetPassword";
+import YourLibrary from "./YourLibrary";
 
 export {
   Home,
@@ -28,4 +29,5 @@ export {
   Signup,
   AboutUs,
   ForgetPassword,
+  YourLibrary,
 };

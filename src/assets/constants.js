@@ -6,6 +6,8 @@ import {
   HiMusicNote,
 } from "react-icons/hi";
 
+import { BsMusicNoteList } from "react-icons/bs";
+
 export const genres = [
   { title: "Pop", value: "POP" },
   { title: "Hip-Hop", value: "HIP_HOP_RAP" },
@@ -26,7 +28,17 @@ export const genres = [
 export const links = [
   { name: "Home", to: "/", icon: HiOutlineHome },
   { name: "Discover", to: "/discover", icon: HiMusicNote },
-  { name: "Around You", to: "/around-you", icon: HiOutlineLocationMarker },
-  { name: "Top Artists", to: "/top-artists", icon: HiFire },
+  // { name: "Around You", to: "/around-you", icon: HiOutlineLocationMarker },
+  // { name: "Top Artists", to: "/top-artists", icon: HiFire },
   { name: "Top Charts", to: "/top-charts", icon: HiChartBar },
+  {
+    name: "Your Library",
+    to: "/your-library",
+    icon: BsMusicNoteList,
+    subLinks: [
+      { name: "Stream", to: "/your-library/stream" },
+      { name: "Playlists", to: "/your-library/playlists" },
+      { name: "Likes", to: "/your-library/likes" },
+    ],
+  },
 ];
