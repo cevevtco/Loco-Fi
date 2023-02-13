@@ -4,10 +4,6 @@ module.exports = {
 
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
-    plugins: [
-      require("tailwind-scrollbar-hide"),
-      // ...
-    ],
     extend: {
       colors: {
         black: "#191624",
@@ -50,4 +46,8 @@ module.exports = {
       },
     },
   },
+  plugins: [
+    require("tailwind-scrollbar-hide"),
+    // ...
+  ],
 };

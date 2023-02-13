@@ -66,7 +66,7 @@ const Home = () => {
           </NavLink>
         </div>
 
-        <div className="relative  flex  items-center mt-12 ">
+        <div className="relative  flex  items-center mt-12">
           <div className=" w-full flex   top-0  h-[570px] lg:h-[600px]  flex-col   bg-[#1F1E1E]  ">
             <h2 className="p-12 font-bold lg:text-3xl text-white text-left">
               New releases
