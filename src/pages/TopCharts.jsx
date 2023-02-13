@@ -1,7 +1,7 @@
 import { TopPlay } from "../components";
 
 const TopCharts = () => (
-  <div className="animate-slideup">
+  <div className="mt-5 mb-10  animate-slideup">
     <TopPlay />
   </div>
 );
