@@ -75,7 +75,7 @@ const App = () => {
           }}
         />
         <div className="flex-1 flex flex-col bg-gradient-to-br from-black to-[#000000]">
-          <Searchbar />
+          {/* <Searchbar /> */}
           {/* 增加 ref={contentDiv} 來勾著這個 div, 增加 onScroll={onScroll} 當滑動 div 會觸發上面的 onScroll function*/}
           <div
             ref={contentDiv}

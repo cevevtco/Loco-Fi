@@ -61,7 +61,7 @@ const TopPlay = () => {
   //   divRef.current.scrollIntoView({ behavior: "smooth" });
   // });
 
-  const topPlays = data?.slice(0, 10);
+  const topPlays = data?.slice(0, 15);
 
   useEffect(() => {
     console.log(JSON.stringify(topPlays));
@@ -84,7 +84,7 @@ const TopPlay = () => {
     >
       <div className="w-full flex flex-col">
         <div className="flex flex-row justify-between items-center">
-          <h2 className="text-white font-bold text-2xl">Top Charts</h2>
+          <h2 className="text-white font-bold text-2xl">Top Charts #15</h2>
           {/* <p
             className="text-gray-300 text-base cursor-pointer
           "

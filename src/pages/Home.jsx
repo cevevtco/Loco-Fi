@@ -43,17 +43,17 @@ const Home = () => {
           alt="background pic"
         />
 
-        <div className="text-left absolute top-[2rem] left-[2rem] sm:top-[6rem]  md:top-[6rem] lg:top-[6rem] xl:top-[8rem] ">
+        <div className="text-left absolute top-[2rem] left-[2rem] sm:top-[6rem]  md:top-[6rem] lg:top-[6rem] xl:top-[8rem]  ">
           <p className="text-[#E5C19F] text-sm sm:text-base md:text-lg lg:text-xl  font-bold  ">
             # Music from Across the globe
           </p>
           <p className="text-white font-extrabold  text-xl sm:text-2xl md:text-3xl lg:text-5xl my-1    ">
             Discover new music.
           </p>
-          <p className="text-white font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-5xl my-1  ">
+          <p className="text-white font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-5xl my-1 ">
             Explore favorite artists.
           </p>
-          <p className="text-white font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-5xl my-1   ">
+          <p className="text-white font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-5xl my-1 ">
             And more in Loco-Fi
           </p>
           <NavLink to="/Discover">
