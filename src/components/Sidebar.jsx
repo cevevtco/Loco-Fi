@@ -103,7 +103,7 @@ const Sidebar = (props) => {
       <div
         className={`absolute top-0 h-screen w-2/3
       bg-gradient-to-tl from-white/10 to-[#232322]
-      backdrop-blur-lg z-10 p-6 md:hidden smooth-transition
+      backdrop-blur-lg z-30 p-6 md:hidden smooth-transition
       ${props.isSidebarOpen ? "left-0" : "-left-full"}`}
       >
         <NavLinks handleClick={props.onNavClick} />

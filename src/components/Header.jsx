@@ -7,6 +7,7 @@ import person from "../assets/person-fill.svg";
 import { RiCloseLine } from "react-icons/ri";
 import { HiOutlineMenu } from "react-icons/hi";
 import { HiOutlineX } from "react-icons/hi";
+import { HiArrowLeft } from "react-icons/hi";
 
 const Header = (props) => {
   const navigate = useNavigate();
@@ -24,12 +25,21 @@ const Header = (props) => {
     setIsDropdownActive(!isDropdownActive);
   };
 
+  const [isSearchbarOpen, setIsSearchbarOpen] = useState(false);
+  const searchClick = () => {
+    setIsSearchbarOpen(!isSearchbarOpen);
+  };
+
   return (
     <header className="relative w-full lg:h-[92px] bg-black">
       <nav className=" relative items-center  border-gray-200 px-4 lg:px-6 py-2.5  dark:bg-gray-800">
         <div className="flex flex-wrap justify-between items-center ml-3 mt-5 max-w-screen-xl">
-          <div className="flex flex-row">
-            <div className=" md:hidden mr-3 mt-1 block ">
+          <div className="flex flex-row ">
+            <div
+              className={`md:hidden mr-3 block ${
+                isSearchbarOpen ? "hidden" : ""
+              }`}
+            >
               {props.isSidebarOpen ? (
                 <RiCloseLine
                   className="w-6 h-6  text-white mr-2 hover:cursor-pointer"
@@ -43,10 +53,10 @@ const Header = (props) => {
                 />
               )}
             </div>
-            <NavLink to="/">
+            <NavLink to="/" className={`${isSearchbarOpen ? "hidden" : ""}`}>
               <img
                 src={logo}
-                className="flex items-center mt-1 mr-3 h-6 lg:h-8 "
+                className="flex items-center  mr-3 h-6 lg:h-8 "
                 alt="Loco-Fi Logo"
               />
             </NavLink>
@@ -89,10 +99,15 @@ const Header = (props) => {
                   </svg>
                 </span>
               </label>
+
+              {/* searchbar appear */}
               <button
-                onClick={handleSubmit}
-                className=" cursor-pointer absolute inset-y-0 right-24 top-5 flex items-center pl-2  sm:hidden"
+                onClick={searchClick}
+                className={` cursor-pointer absolute inset-y-0 right-24 top-5 flex items-center pl-2  sm:hidden ${
+                  isSearchbarOpen ? "hidden" : ""
+                }`}
               >
+                <span className="sr-only">Search</span>
                 <svg
                   width="15"
                   height="15"
@@ -106,10 +121,58 @@ const Header = (props) => {
                   />
                 </svg>
               </button>
+              <HiArrowLeft
+                onClick={searchClick}
+                className={` absolute text-white hover:bg-gray-700  rounded-full  p-2 h-10 w-10 left-3 top-7   cursor-pointer  ${
+                  isSearchbarOpen ? "" : "hidden"
+                }`}
+              />
+
+              <label
+                className={`relative left-8 items-center  sm:hidden   ${
+                  isSearchbarOpen ? "" : "hidden"
+                } `}
+              >
+                <input
+                  className="text-white  placeholder:italic placeholder:text-[#777777] block bg-[#333232] w-[14rem] rounded-full py-2 pl-3 pr-3 shadow-sm focus:outline-none focus:border-slate-300 focus:ring-slate-300 focus:ring-1 sm:text-sm"
+                  placeholder="Search for songs,artists,bands..."
+                  type="text"
+                  name="search"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+                {searchTerm.length > 0 ? (
+                  <HiOutlineX
+                    onClick={() => setSearchTerm("")}
+                    className="absolute text-gray-400 w-7 h-7 cursor-pointer inset-y-0 right-12 top-[0.35rem] flex items-center pl-2 "
+                  />
+                ) : (
+                  <HiOutlineX className="hidden absolute text-gray-400 w-7 h-7 cursor-pointer inset-y-0 right-12 top-1  items-center pl-2" />
+                )}
+
+                <span className="sr-only">Search</span>
+                <span
+                  onClick={handleSubmit}
+                  className="absolute cursor-pointer inset-y-0 right-5 flex items-center pl-2 "
+                >
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M17.6132 15.5158C18.7994 13.901 19.5 11.9073 19.5 9.75C19.5 4.36522 15.1348 0 9.75 0C4.36522 0 0 4.36522 0 9.75C0 15.1348 4.36522 19.5 9.75 19.5C11.9079 19.5 13.902 18.799 15.5171 17.6123L15.5158 17.6132C15.5601 17.6732 15.6093 17.7307 15.6636 17.785L21.4393 23.5607C22.0251 24.1465 22.9749 24.1465 23.5607 23.5607C24.1465 22.9749 24.1465 22.0251 23.5607 21.4393L17.785 15.6636C17.7307 15.6093 17.6732 15.5601 17.6132 15.5158ZM18 9.75C18 14.3063 14.3063 18 9.75 18C5.19365 18 1.5 14.3063 1.5 9.75C1.5 5.19365 5.19365 1.5 9.75 1.5C14.3063 1.5 18 5.19365 18 9.75Z"
+                      fill="white"
+                    />
+                  </svg>
+                </span>
+              </label>
             </form>
           </div>
 
-          <div className=" absolute right-7  flex items-center   ">
+          <div className="absolute right-7  flex items-center ">
             <NavLink
               to="/Login"
               className="flex items-center  text-black hover:bg-gray-200 active:bg-gray-300 font-medium rounded-full
@@ -174,7 +237,7 @@ const Header = (props) => {
       {/* DropDown menu */}
 
       <div
-        className={`absolute top-[4.25rem] h-screen w-screen
+        className={`absolute top-[4.6rem] h-screen w-screen
         bg-gradient-to-b from-white/10 to-from-slate-800
         backdrop-blur-lg z-10   smooth-transition  lg:hidden center   border-gray-200 px-4 lg:px-6 py-2.5  dark:bg-gray-800 
         ${isDropdownActive ? "opacity-100 z-50" : "opacity-0 -z-50"}`}

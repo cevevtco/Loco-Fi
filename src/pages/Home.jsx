@@ -77,7 +77,7 @@ const Home = () => {
           </div>
           <MdChevronLeft
             onClick={slideLeft}
-            className="text-black bg-white rounded-full onClick={slide} absolute left-0  z-50 opacity-50 hover:opacity-100 cursor-pointer"
+            className="text-black bg-white rounded-full onClick={slide} absolute left-0  z-20 opacity-50 hover:opacity-100 cursor-pointer"
             size={45}
           />
           <div
@@ -103,7 +103,7 @@ const Home = () => {
           </div>
           <MdChevronRight
             onClick={slideRight}
-            className="text-black bg-white rounded-full onClick={slide} absolute right-0  z-50 opacity-50 hover:opacity-100 cursor-pointer"
+            className="text-black bg-white rounded-full onClick={slide} absolute right-0  z-20 opacity-50 hover:opacity-100 cursor-pointer"
             size={45}
           />
         </div>
@@ -118,7 +118,7 @@ const Home = () => {
           </div>
           <MdChevronLeft
             onClick={slideLeft2}
-            className="text-black bg-white rounded-full onClick={slide} absolute left-0  z-50 opacity-50 hover:opacity-100 cursor-pointer"
+            className="text-black bg-white rounded-full onClick={slide} absolute left-0  z-20 opacity-50 hover:opacity-100 cursor-pointer"
             size={45}
           />
           <div
@@ -144,7 +144,7 @@ const Home = () => {
           </div>
           <MdChevronRight
             onClick={slideRight2}
-            className="text-black bg-white rounded-full onClick={slide} absolute right-0  z-50 opacity-50 hover:opacity-100 cursor-pointer"
+            className="text-black bg-white rounded-full onClick={slide} absolute right-0  z-20 opacity-50 hover:opacity-100 cursor-pointer"
             size={45}
           />
         </div>
