@@ -4,10 +4,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/Logo.svg";
 import person from "../assets/person-fill.svg";
-import { RiCloseLine } from "react-icons/ri";
-import { HiOutlineMenu } from "react-icons/hi";
-import { HiOutlineX } from "react-icons/hi";
-import { HiArrowLeft } from "react-icons/hi";
+import { RiCloseLine, RiSunLine, RiMoonLine } from "react-icons/ri";
+import { HiOutlineMenu, HiOutlineX, HiArrowLeft } from "react-icons/hi";
 
 const Header = (props) => {
   const navigate = useNavigate();
@@ -123,18 +121,18 @@ const Header = (props) => {
               </button>
               <HiArrowLeft
                 onClick={searchClick}
-                className={` absolute text-white hover:bg-gray-700  rounded-full  p-2 h-10 w-10 left-3 top-7   cursor-pointer  ${
+                className={`transition-all absolute text-white hover:bg-gray-700  rounded-full  p-2 h-10 w-10 left-2 top-6   cursor-pointer  ${
                   isSearchbarOpen ? "" : "hidden"
                 }`}
               />
 
               <label
-                className={`relative left-8 items-center  sm:hidden   ${
+                className={`transition-all ease-in relative left-4 items-center  sm:hidden   ${
                   isSearchbarOpen ? "" : "hidden"
                 } `}
               >
                 <input
-                  className="text-white  placeholder:italic placeholder:text-[#777777] block bg-[#333232] w-[14rem] rounded-full py-2 pl-3 pr-3 shadow-sm focus:outline-none focus:border-slate-300 focus:ring-slate-300 focus:ring-1 sm:text-sm"
+                  className="text-white  placeholder:italic placeholder:text-[#777777] placeholder:text-sm block bg-[#333232] w-[15rem] rounded-full py-1 pl-3 pr-3 shadow-sm focus:outline-none focus:border-slate-300 focus:ring-slate-300 focus:ring-1 text-sm"
                   placeholder="Search for songs,artists,bands..."
                   type="text"
                   name="search"
@@ -144,16 +142,16 @@ const Header = (props) => {
                 {searchTerm.length > 0 ? (
                   <HiOutlineX
                     onClick={() => setSearchTerm("")}
-                    className="absolute text-gray-400 w-7 h-7 cursor-pointer inset-y-0 right-12 top-[0.35rem] flex items-center pl-2 "
+                    className="absolute text-gray-400 w-7 h-7 cursor-pointer inset-y-0 right-10  flex items-center pl-2 "
                   />
                 ) : (
-                  <HiOutlineX className="hidden absolute text-gray-400 w-7 h-7 cursor-pointer inset-y-0 right-12 top-1  items-center pl-2" />
+                  <HiOutlineX className="hidden absolute text-gray-400  w-6 h-6  cursor-pointer inset-y-0 right-12   items-center pl-2" />
                 )}
 
                 <span className="sr-only">Search</span>
                 <span
                   onClick={handleSubmit}
-                  className="absolute cursor-pointer inset-y-0 right-5 flex items-center pl-2 "
+                  className="absolute cursor-pointer inset-y-0 right-4 flex items-center pl-2 "
                 >
                   <svg
                     width="15"
@@ -187,6 +185,16 @@ const Header = (props) => {
                 <strong className="hidden  lg:inline">Log in</strong>
               </span>
             </NavLink>
+            <RiSunLine
+              className={`cursor-pointer absolute right-24 h-5 w-5  text-white  sm:right-16 sm:top-1 lg:hidden ${
+                isSearchbarOpen ? "hidden" : ""
+              }   `}
+            />
+            {/* <RiMoonLine
+              className={`cursor-pointer absolute right-24 h-5 w-5  text-white  sm:right-20 sm:top-1 lg:hidden ${
+                isSearchbarOpen ? "hidden" : ""
+              }   `}
+            /> */}
           </div>
 
           <button onClick={onClick} className="realtive mr-12 mt-2 lg:hidden ">
@@ -202,6 +210,9 @@ const Header = (props) => {
             className="relaitve hidden justify-between items-center  w-full lg:flex lg:w-auto "
             id="mobile-menu-2"
           >
+            {" "}
+            <RiSunLine className="absolute right-[26rem] h-5 w-5 text-white z-[999]" />
+            {/* <RiMoonLine className="absolute right-[26rem] h-5 w-5 text-white z-[999]" /> */}
             <ul className="absolute right-40 flex  flex-col  font-sm lg:flex-row lg:space-x-8 ">
               <li>
                 <NavLink
