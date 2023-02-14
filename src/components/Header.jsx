@@ -6,6 +6,7 @@ import logo from "../assets/Logo.svg";
 import person from "../assets/person-fill.svg";
 import { RiCloseLine } from "react-icons/ri";
 import { HiOutlineMenu } from "react-icons/hi";
+import { HiOutlineX } from "react-icons/hi";
 
 const Header = (props) => {
   const navigate = useNavigate();
@@ -13,8 +14,9 @@ const Header = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    navigate(`/search/${searchTerm}`);
+    if (searchTerm) {
+      navigate(`/search/${searchTerm}`);
+    }
   };
 
   const [isDropdownActive, setIsDropdownActive] = useState(false);
@@ -59,8 +61,20 @@ const Header = (props) => {
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
+                {searchTerm.length > 0 ? (
+                  <HiOutlineX
+                    onClick={() => setSearchTerm("")}
+                    className="absolute text-gray-400 w-7 h-7 cursor-pointer inset-y-0 right-12 top-1 flex items-center pl-2 "
+                  />
+                ) : (
+                  <HiOutlineX className="hidden absolute text-gray-400 w-7 h-7 cursor-pointer inset-y-0 right-12 top-1  items-center pl-2" />
+                )}
+
                 <span className="sr-only">Search</span>
-                <span className="absolute cursor-pointer inset-y-0 right-5 flex items-center pl-2 ">
+                <span
+                  onClick={handleSubmit}
+                  className="absolute cursor-pointer inset-y-0 right-5 flex items-center pl-2 "
+                >
                   <svg
                     width="15"
                     height="15"
@@ -75,7 +89,10 @@ const Header = (props) => {
                   </svg>
                 </span>
               </label>
-              <span className="cursor-pointer absolute inset-y-0 right-24 top-5 flex items-center pl-2  sm:hidden">
+              <button
+                onClick={handleSubmit}
+                className=" cursor-pointer absolute inset-y-0 right-24 top-5 flex items-center pl-2  sm:hidden"
+              >
                 <svg
                   width="15"
                   height="15"
@@ -88,7 +105,7 @@ const Header = (props) => {
                     fill="white"
                   />
                 </svg>
-              </span>
+              </button>
             </form>
           </div>
 
@@ -157,7 +174,7 @@ const Header = (props) => {
       {/* DropDown menu */}
 
       <div
-        className={`absolute top-[4.5rem] h-screen w-screen
+        className={`absolute top-[4.25rem] h-screen w-screen
         bg-gradient-to-b from-white/10 to-from-slate-800
         backdrop-blur-lg z-10   smooth-transition  lg:hidden center   border-gray-200 px-4 lg:px-6 py-2.5  dark:bg-gray-800 
         ${isDropdownActive ? "opacity-100 z-50" : "opacity-0 -z-50"}`}
