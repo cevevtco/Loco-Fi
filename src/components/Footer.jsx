@@ -12,8 +12,8 @@ import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <footer
-      className=" mt-12  p-4 bg-black bg-[url('./assets/img/Home/footer/krayboul.jpg')] bg-no-repeat bg-cover  bg-center 
-      opacity-80 hover:opacity-100 sm:p-6 dark:bg-gray-900"
+      className=" mt-12  p-4 bg-black/5 bg-[url('./assets/img/Home/footer/krayboul.jpg')] bg-no-repeat bg-cover  bg-center 
+        sm:p-6 "
     >
       <div className=" top-0   md:flex md:items-center md:justify-between">
         <div className="mb-6 md:mb-0 ">
@@ -29,7 +29,7 @@ const Footer = () => {
           </p>
         </div>
         <div className="sm:flex sm:items-center sm:justify-between">
-          <ul className="flex flex-wrap items-center mb-6 mr-3 text-sm font-bold text-white sm:mb-0 dark:text-gray-400">
+          <ul className="flex flex-wrap items-center mb-6 mr-3 text-sm font-bold text-white sm:mb-0 ">
             <li>
               <NavLink
                 to="/AboutUs"
@@ -59,17 +59,14 @@ const Footer = () => {
       </div>
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div className="sm:flex sm:items-center sm:justify-between">
-        <span className="text-sm text-white sm:text-center dark:text-gray-400">
+        <span className="text-sm text-white sm:text-center ">
           © 2023{" "}
           <NavLink to="/" className="hover:underline">
             Loco-Fi™.
           </NavLink>
         </span>
         <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-          <a
-            href="#"
-            className="text-white hover:text-gray-400 dark:hover:text-white"
-          >
+          <a href="#" className="text-white hover:text-gray-400 ">
             {/* <img src={line} className="w-5 h-5" alt="Line" /> */}
             <svg
               className="w-5 h-5"
@@ -82,10 +79,7 @@ const Footer = () => {
 
             <span className="sr-only">Line</span>
           </a>
-          <a
-            href="#"
-            className="text-white hover:text-gray-400 dark:hover:text-white"
-          >
+          <a href="#" className="text-white hover:text-gray-400 ">
             {/* <img src={facebook} className="w-5 h-5" alt="Facebook page" /> */}
             <svg
               className="w-5 h-5"
@@ -97,10 +91,7 @@ const Footer = () => {
             </svg>
             <span className="sr-only">Facebook page</span>
           </a>
-          <a
-            href="#"
-            className="text-white hover:text-gray-400 dark:hover:text-white pt-[1px]"
-          >
+          <a href="#" className="text-white hover:text-gray-400  pt-[1px]">
             {/* <img src={instagram} className="w-5 h-5 " alt="Instagram page" /> */}
             <svg
               className="w-5 h-5 "
@@ -112,10 +103,7 @@ const Footer = () => {
             </svg>
             <span className="sr-only">Instagram page</span>
           </a>
-          <a
-            href="#"
-            className="text-white hover:text-gray-400 dark:hover:text-white"
-          >
+          <a href="#" className="text-white hover:text-gray-400 ">
             {/* <img src={twitter} className="w-5 h-5" alt="Twitter page" /> */}
             <svg
               className="w-5 h-5 "
@@ -127,10 +115,7 @@ const Footer = () => {
             </svg>
             <span className="sr-only">Twitter page</span>
           </a>
-          <a
-            href="#"
-            className="text-white hover:text-gray-400 dark:hover:text-white"
-          >
+          <a href="#" className="text-white hover:text-gray-400 ">
             {/* <img src={github} className="w-5 h-5" alt="GitHub account" /> */}
             <svg
               className="w-5 h-5 "
@@ -142,10 +127,7 @@ const Footer = () => {
             </svg>
             <span className="sr-only">GitHub account</span>
           </a>
-          <a
-            href="#"
-            className="text-white hover:text-gray-400 dark:hover:text-white"
-          >
+          <a href="#" className="text-white hover:text-gray-400 ">
             {/* <img src={spotify} className="w-5 h-5" alt="Spotify" /> */}
             <svg
               className="w-5 h-5 "
@@ -157,10 +139,7 @@ const Footer = () => {
             </svg>
             <span className="sr-only">Spotify</span>
           </a>
-          <a
-            href="#"
-            className="text-white hover:text-gray-400 dark:hover:text-white"
-          >
+          <a href="#" className="text-white hover:text-gray-400 ">
             {/* <img src={youtube} className="w-5 h-5 " alt="Youtube channel" /> */}
             <svg
               className="w-5 h-5 "

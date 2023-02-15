@@ -53,13 +53,21 @@ const App = () => {
     contentDiv.current.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const handleToggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode); //Toggle the isDarkMode state
+  };
+
   return (
-    <div>
+    <div className={isDarkMode ? "dark" : ""}>
       {/* sidebarOpen */}
       {/* isSidebarOpen-->property要設在Components (例如：header,Sidebar下才能使用props */}
 
       {/* onMenuClick */}
       <Header
+        onToggleDarkMode={handleToggleDarkMode}
+        isDarkMode={isDarkMode}
         isSidebarOpen={sidebarOpen}
         /* isSidebarOpen是props，sidebarOpen是state，使用prop = { state } */
         onMenuClick={() => {
@@ -67,20 +75,20 @@ const App = () => {
         }}
         // onMenuClick是props，設定arrow function 之後帶到Header.jsx的onClick加入功能
       />
-      <div className="relative flex ">
+      <div className="relative flex  ">
         <Sidebar
           isSidebarOpen={sidebarOpen}
           onNavClick={() => {
             setSidebarOpen(!sidebarOpen);
           }}
         />
-        <div className="flex-1 flex flex-col bg-gradient-to-br from-black to-[#000000]">
+        <div className="flex-1 flex flex-col bg-gradient-to-br from-black to-[#000000] ">
           {/* <Searchbar /> */}
           {/* 增加 ref={contentDiv} 來勾著這個 div, 增加 onScroll={onScroll} 當滑動 div 會觸發上面的 onScroll function*/}
           <div
             ref={contentDiv}
             onScroll={onScroll}
-            className=" px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex "
+            className=" px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex dark:bg-white "
           >
             <div
               className="flex-1 h-fit pb-40"

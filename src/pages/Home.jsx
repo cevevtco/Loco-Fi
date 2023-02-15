@@ -36,9 +36,9 @@ const Home = () => {
 
   return (
     <div>
-      <div className="relative mt-6 h-full w-full">
+      <div className="relative  h-full w-full ">
         <img
-          className="opacity-75 w-full mt-10 lg:mt-0"
+          className="opacity-75 w-full mt-10 lg:mt-0 dark:opacity-100"
           src={clayBanks}
           alt="background pic"
         />
@@ -66,9 +66,9 @@ const Home = () => {
           </NavLink>
         </div>
 
-        <div className="relative  flex  items-center mt-12">
-          <div className=" w-full flex   top-0  h-[570px] lg:h-[600px]  flex-col   bg-[#1F1E1E]  ">
-            <h2 className="p-12 font-bold lg:text-3xl text-white text-left">
+        <div className="relative  flex  items-center mt-12 ">
+          <div className=" w-full flex   top-0  h-[570px] lg:h-[600px]  flex-col   bg-[#1F1E1E] dark:bg-[#f6f6f6] ">
+            <h2 className="p-12 font-bold lg:text-3xl text-white dark:text-black  text-left">
               New releases
               <p className="text-[#E5C19F] text-sm">
                 New songs to listen and enjoy
@@ -77,7 +77,7 @@ const Home = () => {
           </div>
           <MdChevronLeft
             onClick={slideLeft}
-            className="text-black bg-white rounded-full onClick={slide} absolute left-0  z-20 opacity-50 hover:opacity-100 cursor-pointer"
+            className="text-black bg-white rounded-full onClick={slide} absolute left-0  z-20 opacity-50 hover:opacity-100 cursor-pointer dark:text-white dark:bg-gray-700"
             size={45}
           />
           <div
@@ -103,13 +103,13 @@ const Home = () => {
           </div>
           <MdChevronRight
             onClick={slideRight}
-            className="text-black bg-white rounded-full onClick={slide} absolute right-0  z-20 opacity-50 hover:opacity-100 cursor-pointer"
+            className="text-black bg-white rounded-full onClick={slide} absolute right-0  z-20 opacity-50 hover:opacity-100 cursor-pointer dark:text-white dark:bg-gray-700"
             size={45}
           />
         </div>
-        <div className="relative h-[570px] lg:h-[600px] mt-12 flex  items-center bg-[#1F1E1E]  ">
+        <div className="relative h-[570px] lg:h-[600px] mt-12 flex  items-center bg-[#1F1E1E] dark:bg-[#f6f6f6]  ">
           <div className="w-full flex  absolute top-0  flex-col  mb-10 ">
-            <h2 className="p-12 font-bold lg:text-3xl text-white text-left">
+            <h2 className="p-12 font-bold lg:text-3xl text-white dark:text-black text-left">
               Featured
               <p className="text-[#E5C19F] text-sm">
                 Listen to music and stay happy
@@ -118,7 +118,7 @@ const Home = () => {
           </div>
           <MdChevronLeft
             onClick={slideLeft2}
-            className="text-black bg-white rounded-full onClick={slide} absolute left-0  z-20 opacity-50 hover:opacity-100 cursor-pointer"
+            className="text-black bg-white rounded-full onClick={slide} absolute left-0  z-20 opacity-50 hover:opacity-100 cursor-pointer dark:text-white dark:bg-gray-700"
             size={45}
           />
           <div
@@ -144,7 +144,7 @@ const Home = () => {
           </div>
           <MdChevronRight
             onClick={slideRight2}
-            className="text-black bg-white rounded-full onClick={slide} absolute right-0  z-20 opacity-50 hover:opacity-100 cursor-pointer"
+            className="text-black bg-white rounded-full onClick={slide} absolute right-0  z-20 opacity-50 hover:opacity-100 cursor-pointer dark:text-white dark:bg-gray-700"
             size={45}
           />
         </div>

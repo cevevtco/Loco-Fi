@@ -19,10 +19,10 @@ const ForgetPassword = () => {
                 fill="orange"
               />
             </svg>
-            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-white">
+            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-white dark:text-black">
               Forget Password
             </h2>
-            <p className="mt-2 text-center text-sm text-gray-300">
+            <p className="mt-2 text-center text-sm text-gray-300 dark:text-gray-500">
               Enter your email and we'll send you a link to reset your password.
             </p>
           </div>

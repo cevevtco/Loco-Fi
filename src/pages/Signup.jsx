@@ -7,10 +7,10 @@ const Signup = () => {
       <div className=" flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8 animate-slideup">
         <div className="w-full max-w-md space-y-8">
           <div>
-            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-white">
+            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-white dark:text-black">
               Sign up
             </h2>
-            <p className="mt-2 text-center text-sm text-gray-300">
+            <p className="mt-2 text-center text-sm text-gray-300 dark:text-gray-500">
               Already have an account?{" "}
               <NavLink
                 to="/Login"
@@ -83,7 +83,7 @@ const Signup = () => {
 
             <div className="flex items-center justify-between ">
               <div className="flex items-center">
-                <h2 className="ml-2 block text-sm text-gray-300">
+                <h2 className="ml-2 block text-sm text-gray-300 dark:text-gray-500">
                   By signing up, you agree to the{" "}
                   <NavLink
                     to="/PrivacyPolicy"

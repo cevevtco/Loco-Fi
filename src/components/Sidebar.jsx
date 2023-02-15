@@ -9,6 +9,7 @@ import { links } from "../assets/constants";
 
 const NavLinks = ({ handleClick }) => (
   // const NavLinks = ({裡面寫props 或是 直接打 props的名稱, Ex:handleClick})
+
   <div className="mt-10">
     {links.map((item) => {
       if (item.name === "Your Library") {
@@ -19,7 +20,7 @@ const NavLinks = ({ handleClick }) => (
                 // id={`${item.name}-tooltip`}
                 // key={item.name}
                 // to={item.to}
-                className="cursor-pointer  flex flex-row justify-start items-center my-8 mb-4 text-md font-medium text-white hover:text-gray-400 "
+                className="cursor-pointer  flex flex-row justify-start items-center my-8 mb-4 text-md font-medium text-white hover:text-gray-400 dark:text-black  dark:hover:text-gray-500"
                 onClick={() => handleClick && handleClick()}
               >
                 <item.icon className="w-6 h-6 mr-2 " />
@@ -30,7 +31,7 @@ const NavLinks = ({ handleClick }) => (
               <TooltipWrapper key={subLink.name}>
                 <div
                   // to={subLink.to}
-                  className="cursor-pointer flex flex-row justify-start items-center my-2 mx-8 text-sm font-medium text-gray-400 hover:text-white"
+                  className="cursor-pointer flex flex-row justify-start items-center my-2 mx-8 text-sm font-medium text-gray-400 hover:text-white dark:hover:text-gray-500"
                 >
                   {subLink.name}
                 </div>
@@ -80,7 +81,7 @@ const NavLinks = ({ handleClick }) => (
         <NavLink
           key={item.name}
           to={item.to}
-          className="flex flex-row justify-start items-center my-8 text-md font-medium text-white hover:text-gray-400"
+          className="flex flex-row justify-start items-center my-8 text-md font-medium text-white dark:text-black hover:text-gray-400 dark:hover:text-gray-500"
           onClick={() => handleClick && handleClick()}
           end
         >
@@ -96,7 +97,7 @@ const Sidebar = (props) => {
   return (
     <>
       <TooltipProvider>
-        <div className="md:flex hidden  flex-col w-[240px] py-10 px-4 bg-[#15131d]">
+        <div className="md:flex hidden  flex-col w-[240px] py-10 px-4 bg-[#15131d] dark:bg-[#f6f6f6]">
           <NavLinks />
         </div>
       </TooltipProvider>

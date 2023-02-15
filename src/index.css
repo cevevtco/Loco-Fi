@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: white;
+  color: #ffffff;
+}
+
+/* Styles for dark mode */
+.dark body {
+  background-color: #000000;
+  color: #f7fafc;
+}
+
 /* Active Navigation Link */
 .active {
   /* @apply text-white; */

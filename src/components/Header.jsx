@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/Logo.svg";
+import Vector from "../assets/Vector.svg";
 import person from "../assets/person-fill.svg";
 import { RiCloseLine, RiSunLine, RiMoonLine } from "react-icons/ri";
 import { HiOutlineMenu, HiOutlineX, HiArrowLeft } from "react-icons/hi";
@@ -28,9 +29,13 @@ const Header = (props) => {
     setIsSearchbarOpen(!isSearchbarOpen);
   };
 
+  const handleToggleMode = () => {
+    props.onToggleDarkMode(); // Call onToggleDarkMode when mode is toggled
+  };
+
   return (
-    <header className="relative w-full lg:h-[92px] bg-black">
-      <nav className=" relative items-center  border-gray-200 px-4 lg:px-6 py-2.5  dark:bg-gray-800">
+    <header className="relative w-full lg:h-[92px] bg-black dark:bg-white ">
+      <nav className=" relative items-center  border-gray-200 px-4 lg:px-6 py-2.5  ">
         <div className="flex flex-wrap justify-between items-center ml-3 mt-5 max-w-screen-xl">
           <div className="flex flex-row ">
             <div
@@ -51,18 +56,27 @@ const Header = (props) => {
                 />
               )}
             </div>
+
             <NavLink to="/" className={`${isSearchbarOpen ? "hidden" : ""}`}>
-              <img
-                src={logo}
-                className="flex items-center  mr-3 h-6 lg:h-8 "
-                alt="Loco-Fi Logo"
-              />
+              {props.isDarkMode ? (
+                <img
+                  src={Vector}
+                  className="flex items-center  mr-3 h-6 lg:h-8 "
+                  alt="Loco-Fi Logo"
+                />
+              ) : (
+                <img
+                  src={logo}
+                  className="flex items-center  mr-3 h-6 lg:h-8 "
+                  alt="Loco-Fi Logo"
+                />
+              )}
             </NavLink>
 
             <form onSubmit={handleSubmit} autoComplete="off">
               <label className="relative ml-16 hidden sm:block sm:w-60 md:w-96 lg:w-80 xl:w-[35rem]">
                 <input
-                  className="text-white placeholder:italic placeholder:text-[#777777] block bg-[#333232] w-full  rounded-full py-2 pl-3 pr-3 shadow-sm focus:outline-none focus:border-slate-300 focus:ring-slate-300 focus:ring-1 sm:text-sm"
+                  className="text-white  placeholder:italic placeholder:text-[#777777] block bg-[#333232] dark:bg-gray-200 dark:placeholder:text-gray-400 w-full dark:text-black rounded-full py-2 pl-3 pr-3 shadow-sm focus:outline-none focus:border-slate-300 focus:ring-slate-300 focus:ring-1 sm:text-sm"
                   placeholder="Search for songs,artists,bands..."
                   type="text"
                   name="search"
@@ -72,7 +86,7 @@ const Header = (props) => {
                 {searchTerm.length > 0 ? (
                   <HiOutlineX
                     onClick={() => setSearchTerm("")}
-                    className="absolute text-gray-400 w-7 h-7 cursor-pointer inset-y-0 right-12 top-1 flex items-center pl-2 "
+                    className="absolute text-gray-400 dark:text-gray-500 w-7 h-7 cursor-pointer inset-y-0 right-12 top-1 flex items-center pl-2 "
                   />
                 ) : (
                   <HiOutlineX className="hidden absolute text-gray-400 w-7 h-7 cursor-pointer inset-y-0 right-12 top-1  items-center pl-2" />
@@ -93,6 +107,7 @@ const Header = (props) => {
                     <path
                       d="M17.6132 15.5158C18.7994 13.901 19.5 11.9073 19.5 9.75C19.5 4.36522 15.1348 0 9.75 0C4.36522 0 0 4.36522 0 9.75C0 15.1348 4.36522 19.5 9.75 19.5C11.9079 19.5 13.902 18.799 15.5171 17.6123L15.5158 17.6132C15.5601 17.6732 15.6093 17.7307 15.6636 17.785L21.4393 23.5607C22.0251 24.1465 22.9749 24.1465 23.5607 23.5607C24.1465 22.9749 24.1465 22.0251 23.5607 21.4393L17.785 15.6636C17.7307 15.6093 17.6732 15.5601 17.6132 15.5158ZM18 9.75C18 14.3063 14.3063 18 9.75 18C5.19365 18 1.5 14.3063 1.5 9.75C1.5 5.19365 5.19365 1.5 9.75 1.5C14.3063 1.5 18 5.19365 18 9.75Z"
                       fill="white"
+                      className="dark:fill-black"
                     />
                   </svg>
                 </span>
@@ -121,7 +136,7 @@ const Header = (props) => {
               </button>
               <HiArrowLeft
                 onClick={searchClick}
-                className={`transition-all absolute text-white hover:bg-gray-700  rounded-full  p-2 h-10 w-10 left-2 top-6   cursor-pointer  ${
+                className={`transition-all absolute text-white dark:text-black dark:hover:bg-gray-200 hover:bg-gray-700  rounded-full  p-2 h-10 w-10 left-2 top-6   cursor-pointer  ${
                   isSearchbarOpen ? "" : "hidden"
                 }`}
               />
@@ -173,8 +188,8 @@ const Header = (props) => {
           <div className="absolute right-7  flex items-center ">
             <NavLink
               to="/Login"
-              className="flex items-center  text-black hover:bg-gray-200 active:bg-gray-300 font-medium rounded-full
-              text-sm px-2 lg:px-5 py-2 lg:py-2.5  bg-[#F5F5F5] focus:outline-none dark:focus:ring-gray-800 "
+              className="flex items-center  text-black dark:text-white dark:bg-black hover:bg-gray-200 dark:hover:bg-[rgba(0,0,0,0.75)] active:bg-gray-300 font-medium rounded-full
+              text-sm px-2 lg:px-5 py-2 lg:py-2.5  bg-[rgb(245,245,245)] focus:outline-none dark:focus:ring-gray-800 "
             >
               <span className="flex items-center  ">
                 <img
@@ -185,13 +200,16 @@ const Header = (props) => {
                 <strong className="hidden  lg:inline">Log in</strong>
               </span>
             </NavLink>
+
+            {/* mobile toggle */}
+
             <RiSunLine
               className={`cursor-pointer absolute right-24 h-5 w-5  text-white  sm:right-16 sm:top-1 lg:hidden ${
                 isSearchbarOpen ? "hidden" : ""
               }   `}
             />
             {/* <RiMoonLine
-              className={`cursor-pointer absolute right-24 h-5 w-5  text-white  sm:right-20 sm:top-1 lg:hidden ${
+              className={`cursor-pointer absolute right-24 h-5 w-5  text-white sm:right-16 sm:top-1 lg:hidden ${
                 isSearchbarOpen ? "hidden" : ""
               }   `}
             /> */}
@@ -210,14 +228,22 @@ const Header = (props) => {
             className="relaitve hidden justify-between items-center  w-full lg:flex lg:w-auto "
             id="mobile-menu-2"
           >
-            {" "}
-            <RiSunLine className="absolute right-[26rem] h-5 w-5 text-white z-[999]" />
-            {/* <RiMoonLine className="absolute right-[26rem] h-5 w-5 text-white z-[999]" /> */}
-            <ul className="absolute right-40 flex  flex-col  font-sm lg:flex-row lg:space-x-8 ">
+            {props.isDarkMode ? (
+              <RiMoonLine
+                onClick={handleToggleMode}
+                className="fill-black hover:fill-gray-400 cursor-pointer absolute right-[26rem] h-5 w-5 text-white "
+              />
+            ) : (
+              <RiSunLine
+                onClick={handleToggleMode}
+                className="cursor-pointer absolute right-[26rem] h-5 w-5 text-white hover:fill-gray-400 "
+              />
+            )}
+            <ul className="absolute right-40 flex  flex-col  font-sm lg:flex-row lg:space-x-8 text-white   dark:text-gray-700  ">
               <li>
                 <NavLink
                   to="/Discover"
-                  className="block py-2 pr-4 pl-3 text-white hover:text-gray-400 rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
+                  className="block py-2 pr-4 pl-3   rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 hover:text-gray-400 "
                   aria-current="page"
                 >
                   Explore
@@ -227,7 +253,7 @@ const Header = (props) => {
               <li>
                 <NavLink
                   to="/Contactus"
-                  className=" block py-2 pr-4 pl-3 text-white border-b hover:text-gray-400 border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-white lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                  className=" block py-2 pr-4 pl-3  border-b  border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 hover:text-gray-400 "
                 >
                   Contact
                 </NavLink>
@@ -235,7 +261,7 @@ const Header = (props) => {
               <li>
                 <NavLink
                   to="/Signup"
-                  className="block py-2 pr-4 pl-3 text-white border-b hover:text-gray-400 border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-white lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                  className="block py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 hover:text-gray-400   "
                 >
                   Sign up
                 </NavLink>
@@ -249,11 +275,11 @@ const Header = (props) => {
 
       <div
         className={`absolute top-[4.6rem] h-screen w-screen
-        bg-gradient-to-b from-white/10 to-from-slate-800
-        backdrop-blur-lg z-10   smooth-transition  lg:hidden center   border-gray-200 px-4 lg:px-6 py-2.5  dark:bg-gray-800 
+        bg-gradient-to-b from-white/10 to-from-slate-800 
+        backdrop-blur-lg z-10   smooth-transition  lg:hidden center   border-gray-200 px-4 lg:px-6 py-2.5  dark:bg-gray-300 
         ${isDropdownActive ? "opacity-100 z-50" : "opacity-0 -z-50"}`}
       >
-        <ul className="text-center   leading-[5rem] font-bold text-2xl text-white ">
+        <ul className="text-center   leading-[5rem] font-bold text-2xl text-white dark:text-gray-700">
           <li className="">
             <NavLink
               to="/discover"
