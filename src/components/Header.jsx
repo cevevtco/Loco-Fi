@@ -60,7 +60,7 @@ const Header = (props) => {
             </NavLink>
 
             <form onSubmit={handleSubmit} autoComplete="off">
-              <label className="relative ml-28 hidden sm:block sm:w-60 md:w-96 lg:w-80 xl:w-[35rem]">
+              <label className="relative ml-16 hidden sm:block sm:w-60 md:w-96 lg:w-80 xl:w-[35rem]">
                 <input
                   className="text-white placeholder:italic placeholder:text-[#777777] block bg-[#333232] w-full  rounded-full py-2 pl-3 pr-3 shadow-sm focus:outline-none focus:border-slate-300 focus:ring-slate-300 focus:ring-1 sm:text-sm"
                   placeholder="Search for songs,artists,bands..."
@@ -127,7 +127,7 @@ const Header = (props) => {
               />
 
               <label
-                className={`transition-all ease-in relative left-4 items-center  sm:hidden   ${
+                className={`smooth-transition relative left-4 items-center  sm:hidden   ${
                   isSearchbarOpen ? "" : "hidden"
                 } `}
               >

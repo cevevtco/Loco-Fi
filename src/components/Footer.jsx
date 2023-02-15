@@ -12,7 +12,7 @@ import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <footer
-      className=" mt-10  p-4 bg-black bg-[url('./assets/img/Home/footer/krayboul.jpg')] bg-no-repeat bg-cover  bg-center 
+      className=" mt-12  p-4 bg-black bg-[url('./assets/img/Home/footer/krayboul.jpg')] bg-no-repeat bg-cover  bg-center 
       opacity-80 hover:opacity-100 sm:p-6 dark:bg-gray-900"
     >
       <div className=" top-0   md:flex md:items-center md:justify-between">

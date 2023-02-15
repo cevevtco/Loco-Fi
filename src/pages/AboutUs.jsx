@@ -4,7 +4,7 @@ const AboutUs = () => {
   return (
     <div>
       <div
-        className="bg-gray-900 p-10 animate-slideup "
+        className="bg-gray-900 p-10 mt-6 animate-slideup "
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
