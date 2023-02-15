@@ -31,7 +31,7 @@ const NavLinks = ({ handleClick }) => (
               <TooltipWrapper key={subLink.name}>
                 <div
                   // to={subLink.to}
-                  className="cursor-pointer flex flex-row justify-start items-center my-2 mx-8 text-sm font-medium text-gray-400 hover:text-white dark:hover:text-gray-500"
+                  className="cursor-pointer flex flex-row justify-start items-center my-2 mx-8 text-sm font-medium text-gray-400 dark:text-gray-400 hover:text-white dark:hover:text-gray-300"
                 >
                   {subLink.name}
                 </div>
@@ -104,7 +104,7 @@ const Sidebar = (props) => {
       <div
         className={`absolute top-0 h-screen w-2/3
       bg-gradient-to-tl from-white/10 to-[#232322]
-      backdrop-blur-lg z-30 p-6 md:hidden smooth-transition
+      backdrop-blur-lg dark:from-black/50 z-30 p-6 md:hidden smooth-transition
       ${props.isSidebarOpen ? "left-0" : "-left-full"}`}
       >
         <NavLinks handleClick={props.onNavClick} />

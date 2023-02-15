@@ -43,7 +43,7 @@ const Home = () => {
           alt="background pic"
         />
 
-        <div className="text-left absolute top-[2rem] left-[2rem] sm:top-[6rem] md:left-[4rem] md:top-[4rem]  lg:top-[7rem] 2xl:left-[6rem] 2xl:top-[10rem]  ">
+        <div className="text-left absolute top-[2rem] left-[2rem] sm:top-[6rem] md:left-[4rem] md:top-[4rem]  lg:top-[7rem] 2xl:left-[6rem] 2xl:top-[14rem]  ">
           <p className="text-[#E5C19F] text-sm sm:text-lg  lg:text-xl 2xl:text-4xl font-bold  ">
             # Music from Across the globe
           </p>

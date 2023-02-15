@@ -45,13 +45,13 @@ const Header = (props) => {
             >
               {props.isSidebarOpen ? (
                 <RiCloseLine
-                  className="w-6 h-6  text-white mr-2 hover:cursor-pointer"
+                  className="w-6 h-6  text-white dark:text-black  mr-2 hover:cursor-pointer"
                   // onClick 原本的公式是onClick={()=>{}}
                   onClick={props.onMenuClick}
                 />
               ) : (
                 <HiOutlineMenu
-                  className="w-6 h-6  text-white mr-2 hover:cursor-pointer"
+                  className="w-6 h-6  text-white  dark:text-black   mr-2 hover:cursor-pointer"
                   onClick={props.onMenuClick}
                 />
               )}
@@ -113,7 +113,7 @@ const Header = (props) => {
                 </span>
               </label>
 
-              {/* searchbar appear */}
+              {/* searchbar mobile */}
               <button
                 onClick={searchClick}
                 className={` cursor-pointer absolute inset-y-0 right-24 top-5 flex items-center pl-2  sm:hidden ${
@@ -130,7 +130,8 @@ const Header = (props) => {
                 >
                   <path
                     d="M17.6132 15.5158C18.7994 13.901 19.5 11.9073 19.5 9.75C19.5 4.36522 15.1348 0 9.75 0C4.36522 0 0 4.36522 0 9.75C0 15.1348 4.36522 19.5 9.75 19.5C11.9079 19.5 13.902 18.799 15.5171 17.6123L15.5158 17.6132C15.5601 17.6732 15.6093 17.7307 15.6636 17.785L21.4393 23.5607C22.0251 24.1465 22.9749 24.1465 23.5607 23.5607C24.1465 22.9749 24.1465 22.0251 23.5607 21.4393L17.785 15.6636C17.7307 15.6093 17.6732 15.5601 17.6132 15.5158ZM18 9.75C18 14.3063 14.3063 18 9.75 18C5.19365 18 1.5 14.3063 1.5 9.75C1.5 5.19365 5.19365 1.5 9.75 1.5C14.3063 1.5 18 5.19365 18 9.75Z"
-                    fill="white"
+                    fill="white "
+                    className="dark:fill-black "
                   />
                 </svg>
               </button>
@@ -147,7 +148,7 @@ const Header = (props) => {
                 } `}
               >
                 <input
-                  className="text-white  placeholder:italic placeholder:text-[#777777] placeholder:text-sm block bg-[#333232] w-[15rem] rounded-full py-1 pl-3 pr-3 shadow-sm focus:outline-none focus:border-slate-300 focus:ring-slate-300 focus:ring-1 text-sm"
+                  className="text-white  placeholder:italic placeholder:text-[#777777] placeholder:text-sm block bg-[#333232] w-[15rem] rounded-full py-1 pl-3 pr-3 shadow-sm focus:outline-none focus:border-slate-300 focus:ring-slate-300 focus:ring-1 text-sm dark:bg-gray-200 dark:placeholder:text-gray-400 dark:text-black"
                   placeholder="Search for songs,artists,bands..."
                   type="text"
                   name="search"
@@ -178,6 +179,7 @@ const Header = (props) => {
                     <path
                       d="M17.6132 15.5158C18.7994 13.901 19.5 11.9073 19.5 9.75C19.5 4.36522 15.1348 0 9.75 0C4.36522 0 0 4.36522 0 9.75C0 15.1348 4.36522 19.5 9.75 19.5C11.9079 19.5 13.902 18.799 15.5171 17.6123L15.5158 17.6132C15.5601 17.6732 15.6093 17.7307 15.6636 17.785L21.4393 23.5607C22.0251 24.1465 22.9749 24.1465 23.5607 23.5607C24.1465 22.9749 24.1465 22.0251 23.5607 21.4393L17.785 15.6636C17.7307 15.6093 17.6732 15.5601 17.6132 15.5158ZM18 9.75C18 14.3063 14.3063 18 9.75 18C5.19365 18 1.5 14.3063 1.5 9.75C1.5 5.19365 5.19365 1.5 9.75 1.5C14.3063 1.5 18 5.19365 18 9.75Z"
                       fill="white"
+                      className="dark:fill-black hover:fill-gray-400 "
                     />
                   </svg>
                 </span>
@@ -202,24 +204,29 @@ const Header = (props) => {
             </NavLink>
 
             {/* mobile toggle */}
-
-            <RiSunLine
-              className={`cursor-pointer absolute right-24 h-5 w-5  text-white  sm:right-16 sm:top-1 lg:hidden ${
-                isSearchbarOpen ? "hidden" : ""
-              }   `}
-            />
-            {/* <RiMoonLine
-              className={`cursor-pointer absolute right-24 h-5 w-5  text-white sm:right-16 sm:top-1 lg:hidden ${
-                isSearchbarOpen ? "hidden" : ""
-              }   `}
-            /> */}
+            {props.isDarkMode ? (
+              <RiMoonLine
+                onClick={handleToggleMode}
+                className={`fill-black hover:fill-gray-400 cursor-pointer absolute right-24 h-5 w-5  text-white sm:right-16 sm:top-1 lg:hidden transition-all ${
+                  isSearchbarOpen ? "hidden" : ""
+                }   `}
+              />
+            ) : (
+              <RiSunLine
+                onClick={handleToggleMode}
+                className={`cursor-pointer absolute right-24 h-5 w-5  text-white  sm:right-16 sm:top-1 lg:hidden transition-all ${
+                  isSearchbarOpen ? "hidden" : ""
+                }   `}
+              />
+            )}
           </div>
 
           <button onClick={onClick} className="realtive mr-12 mt-2 lg:hidden ">
+            <span className="sr-only">Readmore</span>
             <svg className="w-5 h-5 ">
               <path
                 d="M3 9.5C2.17157 9.5 1.5 8.82843 1.5 8C1.5 7.17157 2.17157 6.5 3 6.5C3.82843 6.5 4.5 7.17157 4.5 8C4.5 8.82843 3.82843 9.5 3 9.5ZM8 9.5C7.17157 9.5 6.5 8.82843 6.5 8C6.5 7.17157 7.17157 6.5 8 6.5C8.82843 6.5 9.5 7.17157 9.5 8C9.5 8.82843 8.82843 9.5 8 9.5ZM13 9.5C12.1716 9.5 11.5 8.82843 11.5 8C11.5 7.17157 12.1716 6.5 13 6.5C13.8284 6.5 14.5 7.17157 14.5 8C14.5 8.82843 13.8284 9.5 13 9.5Z"
-                className="fill-white"
+                className="fill-white dark:fill-black  hover:fill-gray-400"
               ></path>
             </svg>
           </button>

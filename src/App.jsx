@@ -60,7 +60,7 @@ const App = () => {
   };
 
   return (
-    <div className={isDarkMode ? "dark" : ""}>
+    <div className={`smooth-transition ${isDarkMode ? "dark" : ""}`}>
       {/* sidebarOpen */}
       {/* isSidebarOpen-->property要設在Components (例如：header,Sidebar下才能使用props */}
 
