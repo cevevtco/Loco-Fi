@@ -158,7 +158,7 @@ const Header = (props) => {
                 {searchTerm.length > 0 ? (
                   <HiOutlineX
                     onClick={() => setSearchTerm("")}
-                    className="absolute text-gray-400 w-7 h-7 cursor-pointer inset-y-0 right-10  flex items-center pl-2 "
+                    className="absolute text-gray-400 w-5 h-5 cursor-pointer inset-y-0 right-10 top-1 flex items-center pl-2 "
                   />
                 ) : (
                   <HiOutlineX className="hidden absolute text-gray-400  w-6 h-6  cursor-pointer inset-y-0 right-12   items-center pl-2" />
@@ -170,8 +170,8 @@ const Header = (props) => {
                   className="absolute cursor-pointer inset-y-0 right-4 flex items-center pl-2 "
                 >
                   <svg
-                    width="15"
-                    height="15"
+                    width="10"
+                    height="10"
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
