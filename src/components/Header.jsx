@@ -148,7 +148,7 @@ const Header = (props) => {
                 } `}
               >
                 <input
-                  className="text-white  placeholder:italic placeholder:text-[#777777] placeholder:text-sm block bg-[#333232] w-[15rem] rounded-full py-1 pl-3 pr-3 shadow-sm focus:outline-none focus:border-slate-300 focus:ring-slate-300 focus:ring-1 text-sm dark:bg-gray-200 dark:placeholder:text-gray-400 dark:text-black"
+                  className="text-white  placeholder:italic placeholder:text-[#777777] placeholder:text-sm block bg-[#333232] w-[63vw] rounded-full py-1 pl-3 pr-3 shadow-sm focus:outline-none focus:border-slate-300 focus:ring-slate-300 focus:ring-1 text-sm dark:bg-gray-200 dark:placeholder:text-gray-400 dark:text-black"
                   placeholder="Search for songs,artists,bands..."
                   type="text"
                   name="search"
