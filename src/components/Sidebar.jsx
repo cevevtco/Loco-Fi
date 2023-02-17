@@ -48,8 +48,12 @@ const NavLinks = ({ handleClick }) => (
             >
               <a className="flex  flex-col text-white">
                 <h4 className="text-xl">Enjoy Your Library</h4>
-                <p className="text-sm">Log in to see saved songs, artists,</p>
-                <p className="text-sm">and playlists in Your Library.</p>
+                <p className="text-sm font-medium">
+                  Log in to see saved songs, artists,
+                </p>
+                <p className="text-sm font-medium">
+                  and playlists in Your Library.
+                </p>
                 <br />
               </a>
               <NavLink
@@ -97,7 +101,7 @@ const Sidebar = (props) => {
   return (
     <>
       <TooltipProvider>
-        <div className="md:flex hidden  flex-col w-[240px] py-10 px-4 bg-[#15131d] dark:bg-[#f6f6f6]">
+        <div className="md:flex hidden  flex-col w-[240px] py-10 px-4 bg-[rgb(16,16,16)] dark:bg-white font-['poppins']">
           <NavLinks />
         </div>
       </TooltipProvider>

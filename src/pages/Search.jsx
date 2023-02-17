@@ -15,7 +15,7 @@ const Search = () => {
   if (error) return <Error />;
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col font-['poppins']">
       <h2 className="font-bold text-3xl text-white dark:text-black text-left mt-6 mb-10">
         Showing results for <span className="font-black">{searchTerm}</span>
       </h2>

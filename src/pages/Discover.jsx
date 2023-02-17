@@ -20,7 +20,7 @@ const Discover = () => {
   if (error) return <Error />;
   const genreTitle = genres.find(({ value }) => value === genreListId)?.title;
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col font-['poppins']">
       <div className="w-full flex justify-between items-center sm:flex-row flex-col mt-6 mb-10">
         <h2 className="font-bold text-3xl text-white dark:text-black text-left">
           Discover {genreTitle}

@@ -1,7 +1,7 @@
 import { loader } from "../assets";
 
 const Loader = ({ title }) => (
-  <div className="w-full flex justify-center items-center felx-col">
+  <div className="w-full flex justify-center items-center felx-col font-['poppins']">
     <img src={loader} alt="loader" className="w-32 h-32 object-contain" />
     <h1 className="font-bold text-2x1 text-white dark:text-black mt-2">
       {title || "Loading..."}

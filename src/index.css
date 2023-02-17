@@ -1,17 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400&family=Oswald:wght@400;500&family=Poppins:wght@400;500;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-body {
-  background-color: white;
-  color: #ffffff;
-}
-
-/* Styles for dark mode */
-.dark body {
-  background-color: #000000;
-  color: #f7fafc;
-}
 
 /* Active Navigation Link */
 .active {

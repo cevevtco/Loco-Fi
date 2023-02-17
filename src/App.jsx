@@ -60,7 +60,7 @@ const App = () => {
   };
 
   return (
-    <div className={`smooth-transition ${isDarkMode ? "dark" : ""}`}>
+    <div className={` smooth-transition ${isDarkMode ? "dark" : ""}`}>
       {/* sidebarOpen */}
       {/* isSidebarOpen-->property要設在Components (例如：header,Sidebar下才能使用props */}
 
@@ -82,7 +82,7 @@ const App = () => {
             setSidebarOpen(!sidebarOpen);
           }}
         />
-        <div className="flex-1 flex flex-col bg-gradient-to-br from-black to-[#000000] ">
+        <div className="flex-1 flex flex-col bg-[rgb(16,16,16)] ">
           {/* <Searchbar /> */}
           {/* 增加 ref={contentDiv} 來勾著這個 div, 增加 onScroll={onScroll} 當滑動 div 會觸發上面的 onScroll function*/}
           <div

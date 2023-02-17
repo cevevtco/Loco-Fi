@@ -36,41 +36,41 @@ const Home = () => {
 
   return (
     <div>
-      <div className="relative  h-full w-full ">
+      <div className="relative  h-full w-full  ">
         <img
           className="opacity-75 w-full mt-10 lg:mt-0 dark:opacity-100"
           src={clayBanks}
           alt="background pic"
         />
 
-        <div className="text-left absolute top-[2rem] left-[2rem] sm:top-[6rem] md:left-[4rem] md:top-[4rem]  lg:top-[7rem] 2xl:left-[6rem] 2xl:top-[14rem]  ">
-          <p className="text-[#E5C19F] text-sm sm:text-lg  lg:text-xl 2xl:text-4xl font-bold  ">
+        <div className="text-left absolute top-[2rem] left-[2rem] sm:top-[6rem] md:left-[4rem] md:top-[4rem]  lg:top-[7rem] 2xl:left-[6rem] 2xl:top-[14rem] font-['poppins']  ">
+          <p className="text-[#E5C19F] text-sm sm:text-lg  lg:text-xl 2xl:text-4xl font-bold ">
             # Music from Across the globe
           </p>
-          <p className="text-white font-extrabold  text-xl sm:text-3xl lg:text-5xl 2xl:text-7xl my-1    ">
+          <p className="text-white dark:text-gray-200 font-extrabold  text-xl sm:text-3xl lg:text-5xl 2xl:text-7xl my-1    ">
             Discover new music.
           </p>
-          <p className="text-white font-extrabold text-xl sm:text-3xl  lg:text-5xl 2xl:text-7xl my-1 ">
+          <p className="text-white dark:text-gray-200 font-extrabold text-xl sm:text-3xl  lg:text-5xl 2xl:text-7xl my-1 ">
             Explore favorite artists.
           </p>
-          <p className="text-white font-extrabold text-xl sm:text-3xl  lg:text-5xl 2xl:text-7xl my-1 ">
+          <p className="text-white dark:text-gray-200 font-extrabold text-xl sm:text-3xl  lg:text-5xl 2xl:text-7xl my-1 ">
             And more in Loco-Fi
           </p>
           <NavLink to="/Discover">
             <button
-              className=" text-xs w-[10rem] h-[1.5rem] lg:mt-5  lg:w-96 lg:h-14 lg:text-xl 2xl:w-[36rem] 2xl:text-2xl font-bold   bg-gradient-to-r from-[rgb(136,211,206,0.8)] to-[rgb(110,69,226,0.8)]  
-          hover:from-[rgb(110,69,226,0.8)] hover:to-[rgb(136,211,206,0.8)]  rounded-full  text-white active:bg-violet-700"
+              className=" text-xs w-[10rem] h-[1.5rem] lg:mt-5  lg:w-96 lg:h-14 lg:text-xl 2xl:w-[36rem] 2xl:text-2xl  bg-gradient-to-r from-[rgb(136,211,206,0.8)] to-[rgb(110,69,226,0.8)]  
+          hover:from-[rgb(110,69,226,0.8)] hover:to-[rgb(136,211,206,0.8)]  rounded-full  text-white dark:text-gray-200 active:bg-violet-700 font-bold"
             >
               Discover
             </button>
           </NavLink>
         </div>
 
-        <div className="relative  flex  items-center mt-12 ">
-          <div className=" w-full flex   top-0  h-[570px] lg:h-[600px]  flex-col   bg-[#1F1E1E] dark:bg-[#f6f6f6] ">
-            <h2 className="p-12 font-bold lg:text-3xl text-white dark:text-black  text-left">
+        <div className="relative  flex  items-center mt-12 font-['poppins'] ">
+          <div className=" w-full flex   top-0  h-[570px] lg:h-[600px]  flex-col   bg-[#1F1E1E] dark:bg-[#f6f6f6]  ">
+            <h2 className="p-12 font-bold lg:text-3xl text-white dark:text-black  text-left ">
               New releases
-              <p className="text-[#E5C19F] text-sm">
+              <p className="text-[#E5C19F] text-sm font-bold dark:text-[#eaae77]">
                 New songs to listen and enjoy
               </p>
             </h2>
@@ -107,11 +107,11 @@ const Home = () => {
             size={45}
           />
         </div>
-        <div className="relative h-[570px] lg:h-[600px] mt-12 flex  items-center bg-[#1F1E1E] dark:bg-[#f6f6f6]  ">
+        <div className="relative h-[570px] lg:h-[600px] mt-12 flex  items-center bg-[#1F1E1E] dark:bg-[#f6f6f6] font-['poppins']  ">
           <div className="w-full flex  absolute top-0  flex-col  mb-10 ">
             <h2 className="p-12 font-bold lg:text-3xl text-white dark:text-black text-left">
               Featured
-              <p className="text-[#E5C19F] text-sm">
+              <p className="text-[#E5C19F] font-bold text-sm dark:text-[#eaae77]">
                 Listen to music and stay happy
               </p>
             </h2>

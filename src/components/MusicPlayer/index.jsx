@@ -13,6 +13,7 @@ import Track from "./Track";
 import VolumeBar from "./VolumeBar";
 
 const MusicPlayer = () => {
+  //第一個字大寫是component, 小寫是function
   const { activeSong, currentSongs, currentIndex, isActive, isPlaying } =
     useSelector((state) => state.player);
   const [duration, setDuration] = useState(0);
@@ -25,7 +26,7 @@ const MusicPlayer = () => {
 
   useEffect(() => {
     if (currentSongs.length) dispatch(playPause(true));
-  }, [currentIndex]);
+  }, [currentIndex]); //[currentIndex]的Value改變的話，就會跑前面的function
 
   const handlePlayPause = () => {
     if (!isActive) return;

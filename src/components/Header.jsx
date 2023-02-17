@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import { NavLink } from "react-router-dom";
@@ -7,8 +7,11 @@ import Vector from "../assets/Vector.svg";
 import person from "../assets/person-fill.svg";
 import { RiCloseLine, RiSunLine, RiMoonLine } from "react-icons/ri";
 import { HiOutlineMenu, HiOutlineX, HiArrowLeft } from "react-icons/hi";
+import { useRef } from "react";
 
 const Header = (props) => {
+  const searchBarRef = useRef(null);
+
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -25,6 +28,13 @@ const Header = (props) => {
   };
 
   const [isSearchbarOpen, setIsSearchbarOpen] = useState(false);
+
+  useEffect(() => {
+    if (isSearchbarOpen) {
+      searchBarRef.current.focus();
+    }
+  }, [isSearchbarOpen]);
+
   const searchClick = () => {
     setIsSearchbarOpen(!isSearchbarOpen);
   };
@@ -33,10 +43,19 @@ const Header = (props) => {
     props.onToggleDarkMode(); // Call onToggleDarkMode when mode is toggled
   };
 
+  const handleSearchInputKeyDown = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      if (searchTerm) {
+        navigate(`/search/${searchTerm}`);
+      }
+    }
+  };
+
   return (
-    <header className="relative w-full lg:h-[92px] bg-black dark:bg-white ">
-      <nav className=" relative items-center  border-gray-200 px-4 lg:px-6 py-2.5  ">
-        <div className="flex flex-wrap justify-between items-center ml-3 mt-5 max-w-screen-xl">
+    <header className="relative w-full lg:h-[92px] bg-[rgb(16,16,16)] dark:bg-white dark:border-b  dark:border-b-gray-200 ">
+      <nav className=" relative items-center  border-gray-200 px-4 lg:px-6 py-2.5 ">
+        <div className="flex flex-wrap justify-between items-center ml-3 mt-5 max-w-screen-xl ">
           <div className="flex flex-row ">
             <div
               className={`md:hidden mr-3 block ${
@@ -81,6 +100,7 @@ const Header = (props) => {
                   type="text"
                   name="search"
                   value={searchTerm}
+                  onKeyDown={handleSearchInputKeyDown}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 {searchTerm.length > 0 ? (
@@ -115,7 +135,10 @@ const Header = (props) => {
 
               {/* searchbar mobile */}
               <button
-                onClick={searchClick}
+                type="button"
+                onClick={() => {
+                  searchClick();
+                }}
                 className={` cursor-pointer absolute inset-y-0 right-24 top-5 flex items-center pl-2  sm:hidden ${
                   isSearchbarOpen ? "hidden" : ""
                 }`}
@@ -151,8 +174,10 @@ const Header = (props) => {
                   className="text-white  placeholder:italic placeholder:text-[#777777] placeholder:text-sm block bg-[#333232] w-[63vw] rounded-full py-1 pl-3 pr-3 shadow-sm focus:outline-none focus:border-slate-300 focus:ring-slate-300 focus:ring-1 text-sm dark:bg-gray-200 dark:placeholder:text-gray-400 dark:text-black"
                   placeholder="Search for songs,artists,bands..."
                   type="text"
+                  ref={searchBarRef}
                   name="search"
                   value={searchTerm}
+                  onKeyDown={handleSearchInputKeyDown}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 {searchTerm.length > 0 ? (
@@ -187,7 +212,7 @@ const Header = (props) => {
             </form>
           </div>
 
-          <div className="absolute right-7  flex items-center ">
+          <div className="absolute right-7  flex items-center font-['poppins']  ">
             <NavLink
               to="/Login"
               className="flex items-center  text-black dark:text-white dark:bg-black hover:bg-gray-200 dark:hover:bg-[rgba(0,0,0,0.75)] active:bg-gray-300 font-medium rounded-full
@@ -232,18 +257,18 @@ const Header = (props) => {
           </button>
 
           <div
-            className="relaitve hidden justify-between items-center  w-full lg:flex lg:w-auto "
+            className="relaitve hidden justify-between items-center  w-full lg:flex lg:w-auto font-['poppins']  "
             id="mobile-menu-2"
           >
             {props.isDarkMode ? (
               <RiMoonLine
                 onClick={handleToggleMode}
-                className="fill-black hover:fill-gray-400 cursor-pointer absolute right-[26rem] h-5 w-5 text-white "
+                className="fill-black hover:fill-gray-400 cursor-pointer absolute right-[27rem] h-5 w-5 text-white "
               />
             ) : (
               <RiSunLine
                 onClick={handleToggleMode}
-                className="cursor-pointer absolute right-[26rem] h-5 w-5 text-white hover:fill-gray-400 "
+                className="cursor-pointer absolute right-[27rem] h-5 w-5 text-white hover:fill-gray-400 "
               />
             )}
             <ul className="absolute right-40 flex  flex-col  font-sm lg:flex-row lg:space-x-8 text-white   dark:text-gray-700  ">
@@ -281,7 +306,7 @@ const Header = (props) => {
       {/* DropDown menu */}
 
       <div
-        className={`absolute top-[4.6rem] h-screen w-screen
+        className={`font-['poppins'] absolute top-[4.3rem] h-screen w-screen
         bg-gradient-to-b from-white/10 to-from-slate-800 
         backdrop-blur-lg z-10   smooth-transition  lg:hidden center   border-gray-200 px-4 lg:px-6 py-2.5  dark:bg-gray-300 
         ${isDropdownActive ? "opacity-100 z-50" : "opacity-0 -z-50"}`}

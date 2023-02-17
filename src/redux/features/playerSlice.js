@@ -1,16 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   currentSongs: [],
-  currentIndex: 0,
-  isActive: false,
-  isPlaying: false,
+  currentIndex: 0, //This index is initially set to 0, meaning that the first song in the array is initially active
+  isActive: false, //This boolean value is initially set to false, meaning that the application is not playing any music initially.
+  isPlaying: false, //This boolean value is initially set to false, meaning that the first song in the array is initially paused.
   activeSong: {},
-  genreListId: '',
+  genreListId: "",
 };
 
+//讓應用程式能夠在播放音樂時追蹤當前的歌曲、播放列表和播放狀態。
 const playerSlice = createSlice({
-  name: 'player',
+  name: "player",
   initialState,
   reducers: {
     setActiveSong: (state, action) => {
@@ -60,6 +61,12 @@ const playerSlice = createSlice({
   },
 });
 
-export const { setActiveSong, nextSong, prevSong, playPause, selectGenreListId } = playerSlice.actions;
+export const {
+  setActiveSong,
+  nextSong,
+  prevSong,
+  playPause,
+  selectGenreListId,
+} = playerSlice.actions;
 
 export default playerSlice.reducer;

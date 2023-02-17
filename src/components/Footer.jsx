@@ -12,7 +12,7 @@ import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <footer
-      className=" mt-12  p-4 bg-black/5 bg-[url('./assets/img/Home/footer/krayboul.jpg')] bg-no-repeat bg-cover  bg-center 
+      className="font-['poppins'] font-thin  mt-12  p-4 bg-black/5 bg-[url('./assets/img/Home/footer/krayboul.jpg')] bg-no-repeat bg-cover  bg-center 
         sm:p-6 "
     >
       <div className=" top-0   md:flex md:items-center md:justify-between">
@@ -24,7 +24,7 @@ const Footer = () => {
               alt="Loco-Fi Logo"
             />
           </NavLink>
-          <p className="text-[#E5C19F] text-sm mt-2 ml-2 font-bold ">
+          <p className="text-[#E5C19F] text-sm mt-2 ml-2 font-medium ">
             Let music flow in your heart and enrich your soul
           </p>
         </div>

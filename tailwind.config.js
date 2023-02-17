@@ -44,6 +44,11 @@ module.exports = {
           "50%": { transform: "scale(1)" },
           "100%": { transform: "scale(0)" },
         },
+        fontFamily: {
+          comic: ["Comic Neue", "cursive"],
+          oswald: ["Oswald", "sans-serif"],
+          poppins: ["Poppins", "sans-serif"],
+        },
       },
     },
   },
