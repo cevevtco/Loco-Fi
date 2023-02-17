@@ -306,9 +306,9 @@ const Header = (props) => {
       {/* DropDown menu */}
 
       <div
-        className={`font-['poppins'] absolute top-[4.3rem] h-screen w-screen
+        className={`font-['poppins'] absolute top-[4.2rem] h-screen w-screen
         bg-gradient-to-b from-white/10 to-from-slate-800 
-        backdrop-blur-lg z-10   smooth-transition  lg:hidden center   border-gray-200 px-4 lg:px-6 py-2.5  dark:bg-gray-300 
+        backdrop-blur-lg z-25   smooth-transition  lg:hidden center   border-gray-200 px-4 lg:px-6 py-2.5  dark:bg-gray-300 
         ${isDropdownActive ? "opacity-100 z-50" : "opacity-0 -z-50"}`}
       >
         <ul className="text-center   leading-[5rem] font-bold text-2xl text-white dark:text-gray-700">
