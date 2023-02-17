@@ -19,7 +19,7 @@ const ForgetPassword = () => {
                 fill="orange"
               />
             </svg>
-            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-white dark:text-black">
+            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-white dark:text-black font-['poppins']">
               Forget Password
             </h2>
             <p className="mt-2 text-center text-sm text-gray-300 dark:text-gray-500">
