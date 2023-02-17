@@ -3,7 +3,7 @@ import React from "react";
 const Contactus = () => {
   return (
     <>
-      <div className=" w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10 ">
+      <div className=" w-full flex justify-between items-center sm:flex-row flex-col mt-4 mb-10 font-['poppins']">
         <h2 className="text-white dark:text-black font-bold text-3xl mt-8 ">
           Contact Us
         </h2>

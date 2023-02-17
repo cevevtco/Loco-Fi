@@ -47,19 +47,19 @@ const Home = () => {
           <p className="text-[#E5C19F] text-sm sm:text-lg  lg:text-xl 2xl:text-4xl font-bold ">
             # Music from Across the globe
           </p>
-          <p className="text-white dark:text-gray-200 font-extrabold  text-xl sm:text-3xl lg:text-5xl 2xl:text-7xl my-1    ">
+          <p className="text-white  font-extrabold  text-xl sm:text-3xl lg:text-5xl 2xl:text-7xl my-1    ">
             Discover new music.
           </p>
-          <p className="text-white dark:text-gray-200 font-extrabold text-xl sm:text-3xl  lg:text-5xl 2xl:text-7xl my-1 ">
+          <p className="text-white  font-extrabold text-xl sm:text-3xl  lg:text-5xl 2xl:text-7xl my-1 ">
             Explore favorite artists.
           </p>
-          <p className="text-white dark:text-gray-200 font-extrabold text-xl sm:text-3xl  lg:text-5xl 2xl:text-7xl my-1 ">
+          <p className="text-white  font-extrabold text-xl sm:text-3xl  lg:text-5xl 2xl:text-7xl my-1 ">
             And more in Loco-Fi
           </p>
           <NavLink to="/Discover">
             <button
               className=" text-xs w-[10rem] h-[1.5rem] lg:mt-5  lg:w-96 lg:h-14 lg:text-xl 2xl:w-[36rem] 2xl:text-2xl  bg-gradient-to-r from-[rgb(136,211,206,0.8)] to-[rgb(110,69,226,0.8)]  
-          hover:from-[rgb(110,69,226,0.8)] hover:to-[rgb(136,211,206,0.8)]  rounded-full  text-white dark:text-gray-200 active:bg-violet-700 font-bold"
+          hover:from-[rgb(110,69,226,0.8)] hover:to-[rgb(136,211,206,0.8)]  rounded-full  text-white  active:bg-violet-700 font-bold"
             >
               Discover
             </button>

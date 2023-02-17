@@ -9,7 +9,7 @@ const AboutUs = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="flex justify-between items-center sm:flex-row flex-col  text-3xl font-bold text-center text-[#f97f10] mb-10">
+        <h1 className="flex justify-between items-center sm:flex-row flex-col  text-3xl font-bold text-center text-[#f97f10] mb-10 font-['poppins']">
           About Loco-Fi
         </h1>
         <p className="text-lg text-white dark:text-black leading-relaxed mb-10">
