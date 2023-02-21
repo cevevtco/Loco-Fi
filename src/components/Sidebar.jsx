@@ -10,7 +10,7 @@ import { links } from "../assets/constants";
 const NavLinks = ({ handleClick }) => (
   // const NavLinks = ({裡面寫props 或是 直接打 props的名稱, Ex:handleClick})
 
-  <div className="mt-10">
+  <div className="mt-10 z-30">
     {links.map((item) => {
       if (item.name === "Your Library") {
         return (
