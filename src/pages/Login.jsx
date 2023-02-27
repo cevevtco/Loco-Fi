@@ -1,7 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 
 const Login = () => {
+  const [password, setPasswordValue] = React.useState("password");
+
+  const toggle = () => {
+    if (password === "password") {
+      setPasswordValue("text");
+      return;
+    }
+    setPasswordValue("password");
+  };
   return (
     <div>
       <div className=" flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8 animate-slideup">
@@ -37,19 +47,30 @@ const Login = () => {
                   placeholder="Email address"
                 />
               </div>
-              <div>
+              <div className="relative">
                 <label htmlFor="password" className="sr-only">
                   Password
                 </label>
                 <input
                   id="password"
                   name="password"
-                  type="password"
+                  type={password}
                   autoComplete="current-password"
                   required
                   className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-orange-500 focus:outline-none focus:ring-orange-500 sm:text-sm"
                   placeholder="Password"
                 />
+                {password === "password" ? (
+                  <BsFillEyeSlashFill
+                    className="absolute z-10 text-gray-500  w-7 h-7 cursor-pointer  right-6 top-2 sm:top-1   pl-2"
+                    onClick={toggle}
+                  />
+                ) : (
+                  <BsFillEyeFill
+                    className="absolute z-10 text-gray-500  w-7 h-7 cursor-pointer  right-6 top-2 sm:top-1   pl-2"
+                    onClick={toggle}
+                  />
+                )}
               </div>
             </div>
 
